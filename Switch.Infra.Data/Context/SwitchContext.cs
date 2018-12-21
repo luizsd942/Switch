@@ -23,6 +23,7 @@ namespace Switch.Infra.Data.Context
         {
             //Mapeamento por configuração 
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new PostagemConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

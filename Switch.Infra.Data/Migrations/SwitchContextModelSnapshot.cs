@@ -41,11 +41,18 @@ namespace Switch.Infra.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("DataPublicacao");
+                    b.Property<DateTime>("DataPublicacao")
+                        .HasColumnName("Data_Publicacao");
 
-                    b.Property<string>("Texto");
+                    b.Property<string>("Texto")
+                        .IsRequired()
+                        .HasMaxLength(400);
+
+                    b.Property<int>("UsuarioId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Postagens");
                 });
@@ -100,6 +107,14 @@ namespace Switch.Infra.Data.Migrations
                     b.HasOne("Switch.Domain.Entities.Usuario", "Usuario")
                         .WithOne("Identificacao")
                         .HasForeignKey("Switch.Domain.Entities.Identificacao", "UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Switch.Domain.Entities.Postagem", b =>
+                {
+                    b.HasOne("Switch.Domain.Entities.Usuario", "Usuario")
+                        .WithMany("Postagens")
+                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

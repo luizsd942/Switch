@@ -12,8 +12,12 @@ namespace Switch.Infra.Data.Config
         public void Configure(EntityTypeBuilder<Postagem> builder)
         {
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.DataPublicacao).IsRequired().HasColumnName("Data_Publicacao");
-            builder.Property(p => p.Texto).HasColumnName("Texto_Publicacao").IsRequired();            
+            builder.Property(p => p.DataPublicacao)
+                .IsRequired().HasColumnName("Data_Publicacao");
+            builder.Property(p => p.Texto)
+                .IsRequired().HasMaxLength(400);
+
+            //builder.HasOne(p => p.Usuario).WithMany(u => u.Postagens);
         }
     }
 }
