@@ -17,7 +17,7 @@ namespace Switch.Infra.Data.Config
             builder.Property(p => p.Texto)
                 .IsRequired().HasMaxLength(400);
 
-            //builder.HasOne(p => p.Usuario).WithMany(u => u.Postagens);
+            builder.HasOne(p => p.Usuario).WithMany(u => u.Postagens);
         }
     }
 }

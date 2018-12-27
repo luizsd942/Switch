@@ -11,5 +11,7 @@ namespace Switch.Domain.Entities
         public string Texto { get; set; }
         public virtual int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual int GrupoId { get; set; }
+        public virtual Grupo Grupo { get; set; }
     }
 }
