@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Switch.Domain.Enums
 {
-    public enum TipoRelacionamentoEnum
+    public enum TipoRelacionamentoProcuradoEnum
     {
         NaoEspecificado = 1,
         Namoro = 2,

@@ -2,7 +2,7 @@
 
 namespace Switch.Domain.Entities
 {
-    class LocalTrabalho
+    public class LocalTrabalho
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
