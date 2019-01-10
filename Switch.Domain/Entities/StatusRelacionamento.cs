@@ -9,7 +9,11 @@ namespace Switch.Domain.Entities
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-        
-        public StatusRelacionamentoEnum StRelacionamento { get; set; }
+
+        public bool NaoEspecificado { get { return Id == (int)StatusRelacionamentoEnum.NaoEspecificado; } }
+        public bool Solteiro { get { return Id == (int)StatusRelacionamentoEnum.Solteiro; } }
+        public bool Casado { get { return Id == (int)StatusRelacionamentoEnum.Casado; } }
+        public bool RelacionamentoSerio { get { return Id == (int)StatusRelacionamentoEnum.EmRelacionamentoSerio; } }
+
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Switch.Domain.Entities
 {
-    public class IstituicaoEnsino
+    public class InstituicaoEnsino
     { 
         public int Id { get; set; }
         public int UsuarioId { get; set; }

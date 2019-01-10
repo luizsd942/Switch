@@ -7,9 +7,8 @@ namespace Switch.Domain.Enums
     public enum StatusRelacionamentoEnum
     {
         NaoEspecificado = 1,
-        Namorando = 2,
+        Solteiro = 2,
         Casado = 3,
-        Divorciado = 4,
-        Solteiro = 5
+        EmRelacionamentoSerio = 4
     }
 }
